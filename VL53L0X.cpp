@@ -807,6 +807,11 @@ void VL53L0X::stopContinuous()
   writeReg(0xFF, 0x00);
 }
 
+bool VL53L0X::dataReady()
+{
+    return ((readReg(RESULT_INTERRUPT_STATUS) & 0x07) != 0);
+}
+
 // Returns a range reading in millimeters when continuous mode is active
 // (readRangeSingleMillimeters() also calls this function after starting a
 // single-shot range measurement)

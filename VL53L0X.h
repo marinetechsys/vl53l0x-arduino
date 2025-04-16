@@ -128,6 +128,7 @@ class VL53L0X
 
     void startContinuous(uint32_t period_ms = 0);
     void stopContinuous();
+    bool dataReady();
     uint16_t readRangeContinuousMillimeters();
     uint16_t readRangeSingleMillimeters();
 
